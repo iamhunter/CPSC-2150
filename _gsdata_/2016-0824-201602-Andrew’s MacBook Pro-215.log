@@ -1,0 +1,23 @@
+2016-08-24 20:16:04: -- Analysis Started by On File Change Incremental
+2016-08-24 20:16:04: Changes: 17, Conflicts: 0, CopyTime: 0, CopyState: 0/0, Errors: 0, All: 47
+2016-08-24 20:16:04: Right to Left: Copy File: 17 
+2016-08-24 20:16:04: == Sync Started by On File Change Incremental
+2016-08-24 20:16:04: Create Folder 'sftp://newton.cs.clemson.edu/home/ahunte3/215/lab01/out'
+2016-08-24 20:16:04: Create Folder 'sftp://newton.cs.clemson.edu/home/ahunte3/215/lab01/out/production'
+2016-08-24 20:16:04: Create Folder 'sftp://newton.cs.clemson.edu/home/ahunte3/215/lab01/out/production/lab01'
+2016-08-24 20:16:04: Create Folder 'sftp://newton.cs.clemson.edu/home/ahunte3/215/lab01/out/production/lab01/cpsc2151'
+2016-08-24 20:16:04: Create Folder 'sftp://newton.cs.clemson.edu/home/ahunte3/215/lab01/out/production/lab01/cpsc2151/commandline'
+2016-08-24 20:16:04: Create Folder 'sftp://newton.cs.clemson.edu/home/ahunte3/215/lab01/out/production/lab01/cpsc2151/commandline/input'
+2016-08-24 20:16:04: Create Folder 'sftp://newton.cs.clemson.edu/home/ahunte3/215/lab01/out/production/lab01/cpsc2151/system'
+2016-08-24 20:16:04: Create Folder 'sftp://newton.cs.clemson.edu/home/ahunte3/215/lab01/out/production/lab01/cpsc2151/system/input'
+2016-08-24 20:16:04: Create Folder 'sftp://newton.cs.clemson.edu/home/ahunte3/215/lab01/out/production/lab01/cpsc2151/system/output'
+2016-08-24 20:16:04: Copy New '/Users/andrewmarionhunter/Google Drive/School/CPSC 2150/lab01/out/production/lab01/cpsc2151/commandline/Icon' -> 'sftp://newton.cs.clemson.edu/home/ahunte3/215/lab01/out/production/lab01/cpsc2151/commandline/Icon_'
+2016-08-24 20:16:05: Copy New '/Users/andrewmarionhunter/Google Drive/School/CPSC 2150/lab01/out/production/lab01/cpsc2151/commandline/input/Icon' -> 'sftp://newton.cs.clemson.edu/home/ahunte3/215/lab01/out/production/lab01/cpsc2151/commandline/input/Icon_'
+2016-08-24 20:16:05: Copy New '/Users/andrewmarionhunter/Google Drive/School/CPSC 2150/lab01/out/production/lab01/cpsc2151/Icon' -> 'sftp://newton.cs.clemson.edu/home/ahunte3/215/lab01/out/production/lab01/cpsc2151/Icon_'
+2016-08-24 20:16:05: Copy New '/Users/andrewmarionhunter/Google Drive/School/CPSC 2150/lab01/out/production/lab01/cpsc2151/system/Icon' -> 'sftp://newton.cs.clemson.edu/home/ahunte3/215/lab01/out/production/lab01/cpsc2151/system/Icon_'
+2016-08-24 20:16:05: Copy New '/Users/andrewmarionhunter/Google Drive/School/CPSC 2150/lab01/out/production/lab01/cpsc2151/system/input/Icon' -> 'sftp://newton.cs.clemson.edu/home/ahunte3/215/lab01/out/production/lab01/cpsc2151/system/input/Icon_'
+2016-08-24 20:16:05: Copy New '/Users/andrewmarionhunter/Google Drive/School/CPSC 2150/lab01/out/production/lab01/cpsc2151/system/output/Icon' -> 'sftp://newton.cs.clemson.edu/home/ahunte3/215/lab01/out/production/lab01/cpsc2151/system/output/Icon_'
+2016-08-24 20:16:05: Copy New '/Users/andrewmarionhunter/Google Drive/School/CPSC 2150/lab01/out/production/lab01/cpsc2151/system/output/Main.class' -> 'sftp://newton.cs.clemson.edu/home/ahunte3/215/lab01/out/production/lab01/cpsc2151/system/output/Main.class'
+2016-08-24 20:16:05: Copy New '/Users/andrewmarionhunter/Google Drive/School/CPSC 2150/lab01/out/production/lab01/Icon' -> 'sftp://newton.cs.clemson.edu/home/ahunte3/215/lab01/out/production/lab01/Icon_'
+2016-08-24 20:16:05: == Sync Complete. Time: 00:00:01, Speed: 5.8 KB/s, OK: 17, Errors: 0
+2016-08-24 20:16:06: 

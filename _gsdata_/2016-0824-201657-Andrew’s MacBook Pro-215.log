@@ -1,0 +1,7 @@
+2016-08-24 20:16:59: -- Analysis Started by On File Change Incremental
+2016-08-24 20:16:59: Changes: 1, Conflicts: 0, CopyTime: 0, CopyState: 0/0, Errors: 0, All: 48
+2016-08-24 20:16:59: Right to Left: Copy File: 1 
+2016-08-24 20:16:59: == Sync Started by On File Change Incremental
+2016-08-24 20:16:59: Copy New '/Users/andrewmarionhunter/Google Drive/School/CPSC 2150/lab01/src/cpsc2151/system/input/Main.java' -> 'sftp://newton.cs.clemson.edu/home/ahunte3/215/lab01/src/cpsc2151/system/input/Main.java'
+2016-08-24 20:16:59: == Sync Complete. Time: 00:00:00, Speed: 0.0/s, OK: 1, Errors: 0
+2016-08-24 20:17:00: 

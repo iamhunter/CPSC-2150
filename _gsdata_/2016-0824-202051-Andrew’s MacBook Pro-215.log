@@ -1,0 +1,9 @@
+2016-08-24 20:20:53: -- Analysis Started by On File Change Incremental
+2016-08-24 20:20:53: Changes: 3, Conflicts: 0, CopyTime: 0, CopyState: 0/0, Errors: 0, All: 49
+2016-08-24 20:20:53: Right to Left: Copy File: 3 
+2016-08-24 20:20:53: == Sync Started by On File Change Incremental
+2016-08-24 20:20:53: Copy Over '/Users/andrewmarionhunter/Google Drive/School/CPSC 2150/lab01/.idea/workspace.xml' -> 'sftp://newton.cs.clemson.edu/home/ahunte3/215/lab01/.idea/workspace.xml'
+2016-08-24 20:20:53: Copy New '/Users/andrewmarionhunter/Google Drive/School/CPSC 2150/lab01/out/production/lab01/cpsc2151/system/input/Main.class' -> 'sftp://newton.cs.clemson.edu/home/ahunte3/215/lab01/out/production/lab01/cpsc2151/system/input/Main.class'
+2016-08-24 20:20:53: Copy Over '/Users/andrewmarionhunter/Google Drive/School/CPSC 2150/lab01/src/cpsc2151/system/input/Main.java' -> 'sftp://newton.cs.clemson.edu/home/ahunte3/215/lab01/src/cpsc2151/system/input/Main.java'
+2016-08-24 20:20:53: == Sync Complete. Time: 00:00:00, Speed: 0.0/s, OK: 3, Errors: 0
+2016-08-24 20:20:54: 

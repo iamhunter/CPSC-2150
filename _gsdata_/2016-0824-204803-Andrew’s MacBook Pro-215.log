@@ -1,0 +1,13 @@
+2016-08-24 20:48:05: -- Analysis Started by On File Change Incremental
+2016-08-24 20:48:05: Changes: 1, Conflicts: 0, CopyTime: 0, CopyState: 0/0, Errors: 0, All: 50
+2016-08-24 20:48:05: Right to Left: Copy File: 1 
+2016-08-24 20:48:05: == Sync Started by On File Change Incremental
+2016-08-24 20:48:05: Copy Over '/Users/andrewmarionhunter/Google Drive/School/CPSC 2150/lab01/src/cpsc2151/commandline/input/Main.java' -> 'sftp://newton.cs.clemson.edu/home/ahunte3/215/lab01/src/cpsc2151/commandline/input/Main.java'
+2016-08-24 20:48:05: == Sync Complete. Time: 00:00:00, Speed: 0.0/s, OK: 1, Errors: 0
+2016-08-24 20:48:06: -- Analysis Started by On File Change PostSync Re-Analyze
+2016-08-24 20:48:06: Changes: 1, Conflicts: 0, CopyTime: 0, CopyState: 0/0, Errors: 0, All: 50
+2016-08-24 20:48:06: Right to Left: Copy File: 1 
+2016-08-24 20:48:06: == Sync Started by On File Change PostSync Re-Analyze
+2016-08-24 20:48:06: Copy Over '/Users/andrewmarionhunter/Google Drive/School/CPSC 2150/lab01/out/production/lab01/cpsc2151/commandline/input/Main.class' -> 'sftp://newton.cs.clemson.edu/home/ahunte3/215/lab01/out/production/lab01/cpsc2151/commandline/input/Main.class'
+2016-08-24 20:48:06: == Sync Complete. Time: 00:00:00, Speed: 0.0/s, OK: 1, Errors: 0
+2016-08-24 20:48:06: 

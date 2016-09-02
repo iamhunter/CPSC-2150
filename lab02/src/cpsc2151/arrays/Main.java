@@ -28,6 +28,13 @@ public class Main {
 
         isInArray(testNumber, testArray);
 
+        alterArray(testArray, testNumber);
+
+        for(int x = 0; x < 5; x ++)
+        {
+            System.out.print(testArray[x]);
+        }
+
     }
 
 
@@ -47,10 +54,8 @@ public class Main {
     private static boolean isInArray(int toFind, int[] toSearch)
     {
 
-        for(int x = 0; x < toSearch.length; x++)
-        {
-            if(toFind == toSearch[x])
-            {
+        for (int aToSearch : toSearch) {
+            if (toFind == aToSearch) {
                 System.out.print("Success! The value " + toFind + " is present in the array.");
                 return true;
             }
@@ -58,6 +63,43 @@ public class Main {
         System.out.print("Failure! The value " + toFind +" is not present in the array.");
         return false;
     }
+
+    /**
+     * @param toAlter Array to alter.
+     * @param alteration Value to alter the array with.
+     * @requires
+     * toAlter != null
+     * @ensures <pre>
+     * [Each entry of toAlter is decremented by alteration.]
+     * </pre>
+     */
+    private static void alterArray(int[] toAlter, int alteration) {
+        for(int x = 0; x < toAlter.length; x++)
+        {
+            toAlter[x] = toAlter[x] - alteration;
+        }
+    }
+
+
+
 }
+
+
+/**
+ * Scanner scanner = new Scanner(System.in);
+ * System.out.print("Enter an integer array: ");
+ * String line = scanner.nextLine();
+ * StringTokenizer lineTokens = new StringTokenizer(line);
+ *
+ * int[] array = new int[lineTokens.countTokens()];
+ *
+ * for(int i = 0; i < array.length; i++)
+ * {
+ *     array[i] = Integer.parseInt(lineTokens.nextToken());
+ * }
+ *
+ *
+ *
+ */
 
 

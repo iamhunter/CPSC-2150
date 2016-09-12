@@ -1,15 +1,0 @@
-2016-08-28 17:49:26: -- Analysis Started by Analyze And Sync All Command
-2016-08-28 17:49:29: Name 'Icon' in path '/lab01/out/production/lab01/Icon' contains illegal characters, using name 'Icon_' instead
-2016-08-28 17:49:29: Name 'Icon' in path '/lab01/out/production/lab01/cpsc2151/Icon' contains illegal characters, using name 'Icon_' instead
-2016-08-28 17:49:29: Name 'Icon' in path '/lab01/out/production/lab01/cpsc2151/commandline/Icon' contains illegal characters, using name 'Icon_' instead
-2016-08-28 17:49:29: Name 'Icon' in path '/lab01/out/production/lab01/cpsc2151/commandline/input/Icon' contains illegal characters, using name 'Icon_' instead
-2016-08-28 17:49:29: Name 'Icon' in path '/lab01/out/production/lab01/cpsc2151/system/Icon' contains illegal characters, using name 'Icon_' instead
-2016-08-28 17:49:29: Name 'Icon' in path '/lab01/out/production/lab01/cpsc2151/system/input/Icon' contains illegal characters, using name 'Icon_' instead
-2016-08-28 17:49:29: Name 'Icon' in path '/lab01/out/production/lab01/cpsc2151/system/output/Icon' contains illegal characters, using name 'Icon_' instead
-2016-08-28 17:49:29: Changes: 2, Conflicts: 0, CopyTime: 0, CopyState: 0/0, Errors: 0, All: 55
-2016-08-28 17:49:29: Right to Left: Copy File: 2 
-2016-08-28 17:49:29: == Sync Started by Analyze And Sync All Command
-2016-08-28 17:49:30: Copy New '/Users/andrewmarionhunter/Google Drive/School/CPSC 2150/lab01/lab1.zip' -> 'sftp://access1.cs.clemson.edu/home/ahunte3/215/lab01/lab1.zip'
-2016-08-28 17:49:30: Copy Over '/Users/andrewmarionhunter/Google Drive/School/CPSC 2150/Lecture Notes.gdoc' -> 'sftp://access1.cs.clemson.edu/home/ahunte3/215/Lecture Notes.gdoc'
-2016-08-28 17:49:31: == Sync Complete. Time: 00:00:02, Speed: 9.8 KB/s, OK: 2, Errors: 0
-2016-08-28 17:49:31: 

@@ -6,10 +6,114 @@ import java.util.Scanner;
  * Created by andrewmarionhunter on 9/4/16.
  */
 public class Main {
+    public static int shipCounter = 2;
+
     public static void main (String[] args)
     {
-        printEmptygameboard();
+        Ship arrayOfships[] = new Ship[10];
 
+        //callShips(arrayOfships);
+        Ship Carrier = new Ship("Carrier",5, 0, 0, 'd');
+        Ship Battleship = new Ship("Battleship",4, 1, 0, 'd');
+
+        arrayOfships[0] = Carrier;
+        arrayOfships[1] = Battleship;
+
+
+        int gameBoard[][];
+
+        gameBoard = buildFirstgameboard(arrayOfships);
+        printGameboard(gameBoard);
+
+        System.out.println();
+        System.out.println("PLAYER 2 TURN");
+
+        Scanner in = new Scanner(System.in);
+
+
+        while (shipCounter > 0) {
+
+            int xCoordinate, yCoordinate;
+
+            System.out.println("Take a shot: ");
+
+            String line;
+            String[] lineVector;
+
+            line = in.nextLine();
+
+            lineVector = line.split(", ");
+
+            xCoordinate = Integer.parseInt(lineVector[0]);
+            yCoordinate = Integer.parseInt(lineVector[1]);
+
+            shoot(xCoordinate, yCoordinate, arrayOfships, gameBoard);
+
+
+        }
+
+        System.out.println("Game Over!");
+
+
+
+        printGameboard(gameBoard);
+    }
+
+    public static void shoot(int x, int y, Ship[] array, int [][] board)
+    {
+        int counter = 0;
+        while(array[counter]!= null)
+        {
+            if(array[counter].direction == 'r')
+            {
+                for(int z = 0; z < array[counter].shipLength; z++)
+                {
+                    if(array[counter].xShipcoordinate == x+z && array[counter].yShipcoordinate == y)
+                    {
+                        System.out.println("Hit!");
+                        return;
+                    }
+                }
+            }
+            else if(array[counter].direction == 'd')
+            {
+                for(int z = 0; z < array[counter].shipLength; z++)
+                {
+                    if(array[counter].xShipcoordinate == x && (array[counter].yShipcoordinate + z) == y)
+                    {
+                        System.out.println("Hit!");
+                        array[counter].countDown--;
+                        if(array[counter].countDown == 0)
+                        {
+                            System.out.println(array[counter].title + " sunk :(");
+                            shipCounter--;
+                        }
+                        hit(x,y,board);
+                        return;
+                    }
+                }
+            }
+            counter++;
+        }
+
+        System.out.println("Miss!");
+        miss(x,y,board);
+
+    }
+
+    public static void miss(int x, int y, int[][] board)
+
+    {
+        board[x][y] = 3;
+    }
+
+    public static void hit(int x, int y, int[][] board)
+    {
+        board[x][y] = 2;
+    }
+
+    public static void callShips(Ship arrayOfships[])
+    {
         System.out.println("PLAYER 1 TURN");
         System.out.println();
         System.out.print("Place your Carrier(length 5): ");
@@ -33,7 +137,6 @@ public class Main {
 
         Ship Carrier = new Ship("Carrier",5, xCoordinate, yCoordinate, direction);
 
-        Ship arrayOfships[] = new Ship[10];
         arrayOfships[0] = Carrier;
 
 
@@ -107,29 +210,24 @@ public class Main {
         Ship Destroyer = new Ship("Destroyer",2, xCoordinate, yCoordinate, direction);
 
         arrayOfships[4] = Destroyer;
-
-
-        int gameBoard[][];
-
-        gameBoard = buildFirstgameboard(arrayOfships);
-        printGameboard(gameBoard);
-
-        System.out.println();
-        System.out.println("PLAYER 2 TURN");
-
-
-        for(int x = 0; x < 3; x++)
-        {
-            System.out.println("Take a shot: ");
-
-
-
-        }
     }
 
-    private static int[][] buildFirstgameboard(Ship[] array )
+    private static int[][] buildFirstgameboard(Ship[] array)
     {
-        int board[][] = new int[10][10];
+        Grid grid = new Grid();
+        grid.setGridDimensions(10,10);
+        int board[][] = grid.gameGrid;
+
+
+        for(int x = 0; array[x] != null; x++)
+        {
+             if(!grid.isConflictingShipPlacement(array[x].xShipcoordinate,array[x].yShipcoordinate,array[x].shipLength,array[x].shipLength))
+             {
+                 break;
+             }
+
+        }
+
 
         //Initialize array to 0
         for(int x = 0; x < 10; x++)
@@ -147,28 +245,64 @@ public class Main {
             int x, y;
             x = array[counter].xShipcoordinate;
             y = array[counter].yShipcoordinate;
-            board[x][y] = 1;
 
             if(array[counter].direction == 'r')
             {
-                for(int z = 1; z < array[counter].length; z++)
+                for (int z = 0; z < array[counter].shipLength; z++)
                 {
-                    board[x+z][y] = 1;
+                    if ((x+z) > 9 || (x+z) < 0)
+                    {
+                        System.out.println("Your " + array[counter].title + " was placed illegally. Game Over!");
+                        System.exit(1);
+                    }
+                    else if (y > 9 || y < 0)
+                    {
+                        System.out.println("Your " + array[counter].title + " was placed illegally. Game Over!");
+                        System.exit(1);
+                    }
+                    else if(board[x+z][y] == 1)
+                    {
+                        System.out.println("Your " + array[counter].title + " was placed illegally. Game Over!");
+                        System.exit(1);
+                    }
+                    else
+                    {
+                        board[x + z][y] = 1;
+                    }
                 }
             }
             if(array[counter].direction == 'd')
             {
-                for(int z = 1; z < array[counter].length; z++)
+                for(int z = 0; z < array[counter].shipLength; z++)
                 {
-                    board[x][y+z] = 1;
+                    if( x > 9 || x < 0)
+                    {
+                        System.out.println("Your " + array[counter].title + " was placed illegally. Game Over!");
+                        System.exit(1);
+                    }
+                    else if((y+z) > 9 || (y+z) < 0)
+                    {
+                        System.out.println("Your " + array[counter].title + " was placed illegally. Game Over!");
+                        System.exit(1);
+
+                    }
+                    else if(board[x][y+z] == 1)
+                    {
+                        System.out.println("Your " + array[counter].title + " was placed illegally. Game Over!");
+                        System.exit(1);
+                    }
+                    else
+                    {
+                        board[x][y+z] = 1;
+                    }
                 }
+
             }
             counter++;
         }
         return board;
     }
 
-    //TODO: Change numbers to characters
     private static void printGameboard(int[][] board)
     {
         //Print top numbers
@@ -187,7 +321,23 @@ public class Main {
 
             for(int x = 0; x < 10; x ++)
             {
-                System.out.print(board[x][y] + " ");
+                if(board[x][y] == 0)
+                {
+                    System.out.print("- ");
+                }
+                else if(board[x][y] == 1)
+                {
+                    System.out.print("@ ");
+                }
+                else if(board[x][y] == 2)
+                {
+                    System.out.print("X ");
+                }
+                else if(board[x][y] == 3)
+                {
+                    System.out.print("+ ");
+                }
+                //System.out.print(board[x][y] + " ");
             }
             System.out.println();
         }

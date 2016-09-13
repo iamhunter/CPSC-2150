@@ -5,11 +5,13 @@ package battleShip;
  */
 public class Ship {
 
+
     String title;
-    int length;
+    int shipLength;
     int xShipcoordinate;
     int yShipcoordinate;
     char direction;
+    int countDown;
 
 
      public  Ship(String title1,
@@ -19,9 +21,10 @@ public class Ship {
             char direction1)
      {
          title = title1;
-         length = length1;
+         shipLength = length1;
          xShipcoordinate = xShipcoordinate1;
          yShipcoordinate = yShipcoordinate1;
          direction = direction1;
+         countDown = length1;
      }
 }

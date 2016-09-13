@@ -27,14 +27,20 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/battleShip/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="273" column="40" selection-start-line="273" selection-start-column="40" selection-end-line="273" selection-end-column="40" />
+            <state relative-caret-position="570">
+              <caret line="405" column="0" selection-start-line="405" selection-start-column="0" selection-end-line="405" selection-end-column="0" />
               <folding>
                 <element signature="method#main#0;class#Main#0" expanded="false" />
+                <element signature="docComment;method#takeaShotat#0;class#Main#0" expanded="false" />
                 <element signature="method#takeaShotat#0;class#Main#0" expanded="false" />
                 <element signature="method#shoot#0;class#Main#0" expanded="false" />
+                <element signature="docComment;method#callShips#0;class#Main#0" expanded="false" />
+                <element signature="method#callShips#0;class#Main#0" expanded="false" />
+                <element signature="docComment;method#buildFirstgameboard#0;class#Main#0" expanded="false" />
                 <element signature="method#buildFirstgameboard#0;class#Main#0" expanded="false" />
+                <element signature="docComment;method#printGameboard#0;class#Main#0" expanded="false" />
                 <element signature="method#printGameboard#0;class#Main#0" expanded="false" />
+                <element signature="docComment;method#printInGameboard#0;class#Main#0" expanded="false" />
                 <element signature="method#printInGameboard#0;class#Main#0" expanded="false" />
               </folding>
             </state>
@@ -44,9 +50,12 @@
       <file leaf-file-name="Grid.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/battleShip/Grid.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="485">
-              <caret line="54" column="4" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="4" />
+            <state relative-caret-position="500">
+              <caret line="109" column="68" selection-start-line="109" selection-start-column="68" selection-end-line="109" selection-end-column="68" />
               <folding>
+                <element signature="method#placeShip#0;class#Grid#0" expanded="false" />
+                <element signature="method#isConflictingShipPlacement#0;class#Grid#0" expanded="false" />
+                <element signature="method#shoot#0;class#Grid#0" expanded="false" />
                 <element signature="method#displayGrid#0;class#Grid#0" expanded="false" />
               </folding>
             </state>
@@ -81,8 +90,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/battleShip/Ship.java" />
-        <option value="$PROJECT_DIR$/src/battleShip/Grid.java" />
         <option value="$PROJECT_DIR$/src/battleShip/Main.java" />
+        <option value="$PROJECT_DIR$/src/battleShip/Grid.java" />
       </list>
     </option>
   </component>
@@ -97,8 +106,8 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="599" />
-    <option name="width" value="1081" />
+    <option name="x" value="691" />
+    <option name="width" value="989" />
     <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -423,8 +432,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="599" y="0" width="1081" height="1050" extended-state="6" />
-    <editor active="true" />
+    <frame x="691" y="0" width="989" height="1050" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -434,7 +443,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31428573" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31428573" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -466,7 +475,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="6" />
+      <option name="time" value="8" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -481,10 +490,16 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="method#main#0;class#Main#0" expanded="false" />
+            <element signature="docComment;method#takeaShotat#0;class#Main#0" expanded="false" />
             <element signature="method#takeaShotat#0;class#Main#0" expanded="false" />
             <element signature="method#shoot#0;class#Main#0" expanded="false" />
+            <element signature="docComment;method#callShips#0;class#Main#0" expanded="false" />
+            <element signature="method#callShips#0;class#Main#0" expanded="false" />
+            <element signature="docComment;method#buildFirstgameboard#0;class#Main#0" expanded="false" />
             <element signature="method#buildFirstgameboard#0;class#Main#0" expanded="false" />
+            <element signature="docComment;method#printGameboard#0;class#Main#0" expanded="false" />
             <element signature="method#printGameboard#0;class#Main#0" expanded="false" />
+            <element signature="docComment;method#printInGameboard#0;class#Main#0" expanded="false" />
             <element signature="method#printInGameboard#0;class#Main#0" expanded="false" />
           </folding>
         </state>
@@ -495,6 +510,9 @@
         <state relative-caret-position="240">
           <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
           <folding>
+            <element signature="method#placeShip#0;class#Grid#0" expanded="false" />
+            <element signature="method#isConflictingShipPlacement#0;class#Grid#0" expanded="false" />
+            <element signature="method#shoot#0;class#Grid#0" expanded="false" />
             <element signature="method#displayGrid#0;class#Grid#0" expanded="false" />
           </folding>
         </state>
@@ -514,10 +532,16 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="method#main#0;class#Main#0" expanded="false" />
+            <element signature="docComment;method#takeaShotat#0;class#Main#0" expanded="false" />
             <element signature="method#takeaShotat#0;class#Main#0" expanded="false" />
             <element signature="method#shoot#0;class#Main#0" expanded="false" />
+            <element signature="docComment;method#callShips#0;class#Main#0" expanded="false" />
+            <element signature="method#callShips#0;class#Main#0" expanded="false" />
+            <element signature="docComment;method#buildFirstgameboard#0;class#Main#0" expanded="false" />
             <element signature="method#buildFirstgameboard#0;class#Main#0" expanded="false" />
+            <element signature="docComment;method#printGameboard#0;class#Main#0" expanded="false" />
             <element signature="method#printGameboard#0;class#Main#0" expanded="false" />
+            <element signature="docComment;method#printInGameboard#0;class#Main#0" expanded="false" />
             <element signature="method#printInGameboard#0;class#Main#0" expanded="false" />
           </folding>
         </state>
@@ -528,6 +552,9 @@
         <state relative-caret-position="255">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding>
+            <element signature="method#placeShip#0;class#Grid#0" expanded="false" />
+            <element signature="method#isConflictingShipPlacement#0;class#Grid#0" expanded="false" />
+            <element signature="method#shoot#0;class#Grid#0" expanded="false" />
             <element signature="method#displayGrid#0;class#Grid#0" expanded="false" />
           </folding>
         </state>
@@ -547,10 +574,16 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="method#main#0;class#Main#0" expanded="false" />
+            <element signature="docComment;method#takeaShotat#0;class#Main#0" expanded="false" />
             <element signature="method#takeaShotat#0;class#Main#0" expanded="false" />
             <element signature="method#shoot#0;class#Main#0" expanded="false" />
+            <element signature="docComment;method#callShips#0;class#Main#0" expanded="false" />
+            <element signature="method#callShips#0;class#Main#0" expanded="false" />
+            <element signature="docComment;method#buildFirstgameboard#0;class#Main#0" expanded="false" />
             <element signature="method#buildFirstgameboard#0;class#Main#0" expanded="false" />
+            <element signature="docComment;method#printGameboard#0;class#Main#0" expanded="false" />
             <element signature="method#printGameboard#0;class#Main#0" expanded="false" />
+            <element signature="docComment;method#printInGameboard#0;class#Main#0" expanded="false" />
             <element signature="method#printInGameboard#0;class#Main#0" expanded="false" />
           </folding>
         </state>
@@ -561,6 +594,9 @@
         <state relative-caret-position="75">
           <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
           <folding>
+            <element signature="method#placeShip#0;class#Grid#0" expanded="false" />
+            <element signature="method#isConflictingShipPlacement#0;class#Grid#0" expanded="false" />
+            <element signature="method#shoot#0;class#Grid#0" expanded="false" />
             <element signature="method#displayGrid#0;class#Grid#0" expanded="false" />
           </folding>
         </state>
@@ -580,10 +616,16 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="method#main#0;class#Main#0" expanded="false" />
+            <element signature="docComment;method#takeaShotat#0;class#Main#0" expanded="false" />
             <element signature="method#takeaShotat#0;class#Main#0" expanded="false" />
             <element signature="method#shoot#0;class#Main#0" expanded="false" />
+            <element signature="docComment;method#callShips#0;class#Main#0" expanded="false" />
+            <element signature="method#callShips#0;class#Main#0" expanded="false" />
+            <element signature="docComment;method#buildFirstgameboard#0;class#Main#0" expanded="false" />
             <element signature="method#buildFirstgameboard#0;class#Main#0" expanded="false" />
+            <element signature="docComment;method#printGameboard#0;class#Main#0" expanded="false" />
             <element signature="method#printGameboard#0;class#Main#0" expanded="false" />
+            <element signature="docComment;method#printInGameboard#0;class#Main#0" expanded="false" />
             <element signature="method#printInGameboard#0;class#Main#0" expanded="false" />
           </folding>
         </state>
@@ -603,10 +645,16 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="method#main#0;class#Main#0" expanded="false" />
+            <element signature="docComment;method#takeaShotat#0;class#Main#0" expanded="false" />
             <element signature="method#takeaShotat#0;class#Main#0" expanded="false" />
             <element signature="method#shoot#0;class#Main#0" expanded="false" />
+            <element signature="docComment;method#callShips#0;class#Main#0" expanded="false" />
+            <element signature="method#callShips#0;class#Main#0" expanded="false" />
+            <element signature="docComment;method#buildFirstgameboard#0;class#Main#0" expanded="false" />
             <element signature="method#buildFirstgameboard#0;class#Main#0" expanded="false" />
+            <element signature="docComment;method#printGameboard#0;class#Main#0" expanded="false" />
             <element signature="method#printGameboard#0;class#Main#0" expanded="false" />
+            <element signature="docComment;method#printInGameboard#0;class#Main#0" expanded="false" />
             <element signature="method#printInGameboard#0;class#Main#0" expanded="false" />
           </folding>
         </state>
@@ -626,10 +674,16 @@
           <caret line="87" column="12" selection-start-line="87" selection-start-column="12" selection-end-line="87" selection-end-column="12" />
           <folding>
             <element signature="method#main#0;class#Main#0" expanded="false" />
+            <element signature="docComment;method#takeaShotat#0;class#Main#0" expanded="false" />
             <element signature="method#takeaShotat#0;class#Main#0" expanded="false" />
             <element signature="method#shoot#0;class#Main#0" expanded="false" />
+            <element signature="docComment;method#callShips#0;class#Main#0" expanded="false" />
+            <element signature="method#callShips#0;class#Main#0" expanded="false" />
+            <element signature="docComment;method#buildFirstgameboard#0;class#Main#0" expanded="false" />
             <element signature="method#buildFirstgameboard#0;class#Main#0" expanded="false" />
+            <element signature="docComment;method#printGameboard#0;class#Main#0" expanded="false" />
             <element signature="method#printGameboard#0;class#Main#0" expanded="false" />
+            <element signature="docComment;method#printInGameboard#0;class#Main#0" expanded="false" />
             <element signature="method#printInGameboard#0;class#Main#0" expanded="false" />
           </folding>
         </state>
@@ -649,10 +703,16 @@
           <caret line="87" column="12" selection-start-line="87" selection-start-column="12" selection-end-line="87" selection-end-column="12" />
           <folding>
             <element signature="method#main#0;class#Main#0" expanded="false" />
+            <element signature="docComment;method#takeaShotat#0;class#Main#0" expanded="false" />
             <element signature="method#takeaShotat#0;class#Main#0" expanded="false" />
             <element signature="method#shoot#0;class#Main#0" expanded="false" />
+            <element signature="docComment;method#callShips#0;class#Main#0" expanded="false" />
+            <element signature="method#callShips#0;class#Main#0" expanded="false" />
+            <element signature="docComment;method#buildFirstgameboard#0;class#Main#0" expanded="false" />
             <element signature="method#buildFirstgameboard#0;class#Main#0" expanded="false" />
+            <element signature="docComment;method#printGameboard#0;class#Main#0" expanded="false" />
             <element signature="method#printGameboard#0;class#Main#0" expanded="false" />
+            <element signature="docComment;method#printInGameboard#0;class#Main#0" expanded="false" />
             <element signature="method#printInGameboard#0;class#Main#0" expanded="false" />
           </folding>
         </state>
@@ -672,10 +732,16 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="method#main#0;class#Main#0" expanded="false" />
+            <element signature="docComment;method#takeaShotat#0;class#Main#0" expanded="false" />
             <element signature="method#takeaShotat#0;class#Main#0" expanded="false" />
             <element signature="method#shoot#0;class#Main#0" expanded="false" />
+            <element signature="docComment;method#callShips#0;class#Main#0" expanded="false" />
+            <element signature="method#callShips#0;class#Main#0" expanded="false" />
+            <element signature="docComment;method#buildFirstgameboard#0;class#Main#0" expanded="false" />
             <element signature="method#buildFirstgameboard#0;class#Main#0" expanded="false" />
+            <element signature="docComment;method#printGameboard#0;class#Main#0" expanded="false" />
             <element signature="method#printGameboard#0;class#Main#0" expanded="false" />
+            <element signature="docComment;method#printInGameboard#0;class#Main#0" expanded="false" />
             <element signature="method#printInGameboard#0;class#Main#0" expanded="false" />
           </folding>
         </state>
@@ -695,10 +761,16 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="method#main#0;class#Main#0" expanded="false" />
+            <element signature="docComment;method#takeaShotat#0;class#Main#0" expanded="false" />
             <element signature="method#takeaShotat#0;class#Main#0" expanded="false" />
             <element signature="method#shoot#0;class#Main#0" expanded="false" />
+            <element signature="docComment;method#callShips#0;class#Main#0" expanded="false" />
+            <element signature="method#callShips#0;class#Main#0" expanded="false" />
+            <element signature="docComment;method#buildFirstgameboard#0;class#Main#0" expanded="false" />
             <element signature="method#buildFirstgameboard#0;class#Main#0" expanded="false" />
+            <element signature="docComment;method#printGameboard#0;class#Main#0" expanded="false" />
             <element signature="method#printGameboard#0;class#Main#0" expanded="false" />
+            <element signature="docComment;method#printInGameboard#0;class#Main#0" expanded="false" />
             <element signature="method#printInGameboard#0;class#Main#0" expanded="false" />
           </folding>
         </state>
@@ -729,9 +801,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/battleShip/Grid.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="485">
-          <caret line="54" column="4" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="4" />
+        <state relative-caret-position="500">
+          <caret line="109" column="68" selection-start-line="109" selection-start-column="68" selection-end-line="109" selection-end-column="68" />
           <folding>
+            <element signature="method#placeShip#0;class#Grid#0" expanded="false" />
+            <element signature="method#isConflictingShipPlacement#0;class#Grid#0" expanded="false" />
+            <element signature="method#shoot#0;class#Grid#0" expanded="false" />
             <element signature="method#displayGrid#0;class#Grid#0" expanded="false" />
           </folding>
         </state>
@@ -739,14 +814,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/battleShip/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="273" column="40" selection-start-line="273" selection-start-column="40" selection-end-line="273" selection-end-column="40" />
+        <state relative-caret-position="570">
+          <caret line="405" column="0" selection-start-line="405" selection-start-column="0" selection-end-line="405" selection-end-column="0" />
           <folding>
             <element signature="method#main#0;class#Main#0" expanded="false" />
+            <element signature="docComment;method#takeaShotat#0;class#Main#0" expanded="false" />
             <element signature="method#takeaShotat#0;class#Main#0" expanded="false" />
             <element signature="method#shoot#0;class#Main#0" expanded="false" />
+            <element signature="docComment;method#callShips#0;class#Main#0" expanded="false" />
+            <element signature="method#callShips#0;class#Main#0" expanded="false" />
+            <element signature="docComment;method#buildFirstgameboard#0;class#Main#0" expanded="false" />
             <element signature="method#buildFirstgameboard#0;class#Main#0" expanded="false" />
+            <element signature="docComment;method#printGameboard#0;class#Main#0" expanded="false" />
             <element signature="method#printGameboard#0;class#Main#0" expanded="false" />
+            <element signature="docComment;method#printInGameboard#0;class#Main#0" expanded="false" />
             <element signature="method#printInGameboard#0;class#Main#0" expanded="false" />
           </folding>
         </state>

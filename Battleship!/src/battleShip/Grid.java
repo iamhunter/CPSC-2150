@@ -6,17 +6,46 @@ package battleShip;
 public class Grid {
     int gameGrid[][];
 
+    /**
+     * @return void
+     * @requires
+     * rows != null
+     * columns != null
+     * [Proper number of rows and columns]
+     * @ensures <pre>
+     * [Dimensions are set to 10 properly]
+     * </pre>
+     */
     void setGridDimensions (int rows, int columns)
     {
         gameGrid = new int[rows][columns];
     }
+
+
+    /**
+     * @return void
+     * @requires
+     * rows != null
+     * columns != null
+     * @ensures <pre>
+     * [Dimensions are set to 10 properly]
+     * </pre>
+     */
     void placeShip (int row, int column, int length, int direction)
     {
-    /*TODO: – This method should place a ship on the ocean grid at the starting coordinates, with the
-    starting length, and in the specified direction from the starting point. The direction can
-    be indicated by 0 = down and 1 = right
-    */
+        int[][] theBoard = new int[10][10];
+        theBoard[row][column] = 2;
     }
+
+    /**
+     * @return Identification for ship placement
+     * @requires
+     * rows != null
+     * columns != null
+     * @ensures <pre>
+     * [Conflicting ship placement is checked properly]
+     * </pre>
+     */
     boolean isConflictingShipPlacement (int row, int column, int length, int direction)
     {
         if(direction == 'd')
@@ -36,6 +65,15 @@ public class Grid {
         return true;
     }
 
+    /**
+     * @return Identification for shot
+     * @requires
+     * rows != null
+     * columns != null
+     * @ensures <pre>
+     * [Checks is shot hits, misses, or hits and sinks]
+     * </pre>
+     */
     int shoot(int row, int column){
         /*– This method should handle a player’s shot at a coordinate on the ocean grid. The return
         value should be as follows:
@@ -43,14 +81,51 @@ public class Grid {
         ∗ return 0 if the shot hits
         ∗ return 1 if the shot hits and sinks a ship
         */
-    return 0;
-    }
-    boolean hasBeenAttempted (int row, int column)
-    {
-    //TODO: –This method returns true if the player has already attempted a shot at the specified coordinates(otherwise false).
+        int hit = -1;
+        int miss = 0;
+        int sink = 1;
 
-        return true;
+        int[][] theBoard = new int[10][10];
+        if(theBoard[row][column] == hit)
+        {
+            return 0;
+        }
+        else if(theBoard[row][column] == miss)
+        {
+            return -1;
+        }
+        else if(theBoard[row][column] == sink)
+        {
+            return 1;
+        }
+        return 0;
     }
+
+    /**
+     * @return Identification for shot
+     * @requires
+     * rows != null
+     * columns != null
+     * @ensures <pre>
+     * [Checks the shot, returns true if it has already been shot at]
+     * </pre>
+     */
+    boolean hasBeenAttempted (int row, int column) {
+        //TODO: –This method returns true if the player has already attempted a shot at the specified coordinates(otherwise false).
+
+        int[][] theBoard = new int[10][10];
+        return theBoard[row][column] == 3;
+    }
+
+    /**
+     * @return void
+     * @requires
+     * board != null
+     * [Proper gameboard]
+     * @ensures <pre>
+     * [Gameboard is printed properly]
+     * </pre>
+     */
     void displayGrid(boolean showShips)
     {
         //Print top numbers

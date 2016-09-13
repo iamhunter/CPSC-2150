@@ -6,6 +6,7 @@ import java.util.Scanner;
  * Created by andrewmarionhunter on 9/4/16.
  */
 public class Main {
+    //List of static variables to be used throughout the program
     public static int shipCounter1 = 1;
     public static Ship arrayOfships1[] = new Ship[10];
     public static int gameBoard1[][];
@@ -14,7 +15,7 @@ public class Main {
     public static int gameBoard2[][];
     public static int roundCounter = 0;
 
-
+    //main function runs through the program
     public static void main (String[] args) {
 
         System.out.println("PLAYER 1 TURN");
@@ -55,6 +56,17 @@ public class Main {
         System.out.println("Game Over!");
 
     }
+    /**
+     * @return void
+     * @requires
+     * variable != null
+     * xCoordinate & yCoordinate != null
+     * xCoordinate & yCoordinate > -1
+     * [xCoordinate & yCoordinate have not been used yet]
+     * @ensures <pre>
+     * [Shoots at the proper spot on the proper board]
+     * </pre>
+     */
     public static void takeaShotat(int variable)
     {
         Scanner in = new Scanner(System.in);
@@ -168,6 +180,17 @@ public class Main {
         board[x][y] = 2;
     }
 
+    /**
+     * @return void
+     * @requires
+     * arrayOfships != null
+     * xCoordinate & yCoordinate != null
+     * xCoordinate & yCoordinate > -1
+     * [xCoordinate & yCoordinate have not been used yet]
+     * @ensures <pre>
+     * [Ships are created and placed on the board properly]
+     * </pre>
+     */
     public static void callShips(Ship arrayOfships[])
     {
         int board[][] = buildFirstgameboard(arrayOfships);
@@ -187,8 +210,8 @@ public class Main {
 
         lineVector = line.split(", ");
 
-        xCoordinate = Integer.parseInt(lineVector[0]);
-        yCoordinate = Integer.parseInt(lineVector[1]);
+        yCoordinate = Integer.parseInt(lineVector[0]);
+        xCoordinate = Integer.parseInt(lineVector[1]);
 
         System.out.print("Choose direction (d/r): ");
         direction = in.next().charAt(0);
@@ -207,8 +230,8 @@ public class Main {
 
         lineVector = line.split(", ");
 
-        xCoordinate = Integer.parseInt(lineVector[0]);
-        yCoordinate = Integer.parseInt(lineVector[1]);
+        yCoordinate = Integer.parseInt(lineVector[0]);
+        xCoordinate = Integer.parseInt(lineVector[1]);
 
         System.out.print("Choose direction (d/r): ");
         direction = in.next().charAt(0);
@@ -227,8 +250,8 @@ public class Main {
 
         lineVector = line.split(", ");
 
-        xCoordinate = Integer.parseInt(lineVector[0]);
-        yCoordinate = Integer.parseInt(lineVector[1]);
+        yCoordinate = Integer.parseInt(lineVector[0]);
+        xCoordinate = Integer.parseInt(lineVector[1]);
 
         System.out.print("Choose direction (d/r): ");
         direction = in.next().charAt(0);
@@ -247,8 +270,8 @@ public class Main {
 
         lineVector = line.split(", ");
 
-        xCoordinate = Integer.parseInt(lineVector[0]);
-        yCoordinate = Integer.parseInt(lineVector[1]);
+        yCoordinate = Integer.parseInt(lineVector[0]);
+        xCoordinate = Integer.parseInt(lineVector[1]);
 
         System.out.print("Choose direction (d/r): ");
         direction = in.next().charAt(0);
@@ -267,8 +290,8 @@ public class Main {
 
         lineVector = line.split(", ");
 
-        xCoordinate = Integer.parseInt(lineVector[0]);
-        yCoordinate = Integer.parseInt(lineVector[1]);
+        yCoordinate = Integer.parseInt(lineVector[0]);
+        xCoordinate = Integer.parseInt(lineVector[1]);
 
         System.out.print("Choose direction (d/r): ");
         direction = in.next().charAt(0);
@@ -280,6 +303,15 @@ public class Main {
         printGameboard(board);
     }
 
+    /**
+     * @return Gameboard
+     * @requires
+     * array != null
+     * [Proper ships to be placed on the board]
+     * @ensures <pre>
+     * [Gameboard is built properly]
+     * </pre>
+     */
     private static int[][] buildFirstgameboard(Ship[] array)
     {
         Grid grid = new Grid();
@@ -371,6 +403,15 @@ public class Main {
         return board;
     }
 
+    /**
+     * @return void
+     * @requires
+     * board != null
+     * [Proper gameboard]
+     * @ensures <pre>
+     * [Gameboard is printed properly]
+     * </pre>
+     */
     private static void printGameboard(int[][] board)
     {
         //Print top numbers
@@ -412,6 +453,15 @@ public class Main {
         System.out.println();
     }
 
+    /**
+     * @return void
+     * @requires
+     * board != null
+     * [Proper gameboard]
+     * @ensures <pre>
+     * [Gameboard is printed properly]
+     * </pre>
+     */
     private static void printInGameboard(int[][] board)
     {
         //Print top numbers

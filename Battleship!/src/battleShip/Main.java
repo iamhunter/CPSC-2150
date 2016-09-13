@@ -7,11 +7,11 @@ import java.util.Scanner;
  */
 public class Main {
     public static int shipCounter = 2;
+    public static Ship arrayOfships[] = new Ship[10];
+    public static int gameBoard[][];
 
     public static void main (String[] args)
     {
-        Ship arrayOfships[] = new Ship[10];
-
         //callShips(arrayOfships);
         Ship Carrier = new Ship("Carrier",5, 0, 0, 'd');
         Ship Battleship = new Ship("Battleship",4, 1, 0, 'd');
@@ -19,44 +19,39 @@ public class Main {
         arrayOfships[0] = Carrier;
         arrayOfships[1] = Battleship;
 
-
-        int gameBoard[][];
-
         gameBoard = buildFirstgameboard(arrayOfships);
         printGameboard(gameBoard);
 
         System.out.println();
         System.out.println("PLAYER 2 TURN");
 
+        while (shipCounter > 0) {
+            takeaShot();
+            printGameboard(gameBoard);
+        }
+        System.out.println("Game Over!");
+
+    }
+    public static void takeaShot()
+    {
         Scanner in = new Scanner(System.in);
 
 
-        while (shipCounter > 0) {
+        int xCoordinate, yCoordinate;
 
-            int xCoordinate, yCoordinate;
+        System.out.print("Take a shot: ");
 
-            System.out.println("Take a shot: ");
+        String line;
+        String[] lineVector;
 
-            String line;
-            String[] lineVector;
+        line = in.nextLine();
 
-            line = in.nextLine();
+        lineVector = line.split(", ");
 
-            lineVector = line.split(", ");
+        xCoordinate = Integer.parseInt(lineVector[0]);
+        yCoordinate = Integer.parseInt(lineVector[1]);
 
-            xCoordinate = Integer.parseInt(lineVector[0]);
-            yCoordinate = Integer.parseInt(lineVector[1]);
-
-            shoot(xCoordinate, yCoordinate, arrayOfships, gameBoard);
-
-
-        }
-
-        System.out.println("Game Over!");
-
-
-
-        printGameboard(gameBoard);
+        shoot(xCoordinate, yCoordinate, arrayOfships, gameBoard);
     }
 
     public static void shoot(int x, int y, Ship[] array, int [][] board)

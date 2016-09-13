@@ -53,12 +53,26 @@ public class Grid {
     }
     void displayGrid(boolean showShips)
     {
-        /*
-    –This method prints the grid to standard output.The format of the grid is demonstrated
-        in the sample output at the end of these instructions.If the parameter is true, display
-        the placement of the ships;
-        otherwise, only display the hits and misses.
-                */
+        //Print top numbers
+        System.out.print("  ");
+        for (int x  = 0; x < 10; x++)
+        {
+            System.out.print(x + " ");
+        }
+        System.out.println();
+
+        //Print game board
+        for (int x = 0; x < 10; x++)
+        {
+            //Print side numbers
+            System.out.print(x + " ");
+            for(int y = 0; y < 10; y ++)
+            {
+                System.out.print("- ");
+            }
+            System.out.println();
+        }
+        System.out.println();
     }
 
 }

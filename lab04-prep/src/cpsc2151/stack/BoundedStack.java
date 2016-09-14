@@ -10,7 +10,7 @@ public class BoundedStack
     Integer[] contents;
     int count;
 
-    void BoundedStack(int maximum)
+    public BoundedStack(int maximum)
     {
         contents = new Integer[maximum];
         count = 0;

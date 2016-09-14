@@ -22,7 +22,7 @@ public class TestBoundedSet extends TestCase
         set.insert(2);
         set.insert(1000000000);
         set.insert(1);
-        
+
 
     }
 

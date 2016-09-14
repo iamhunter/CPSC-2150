@@ -16,6 +16,27 @@ public class BoundedStack
         count = 0;
     }
 
+    public BoundedStack(int size, Integer[] initial) {
+        this.contents = new Integer[size];
+        this.count = initial.length;
+        for(int i = 0; i < this.count; ++i)
+            this.contents[i] = initial[i];
+    }
+
+    public boolean equals(Object o) {
+        // Check for type equality.
+        if(!(o instanceof BoundedStack)) return false;
+        // The object is of the correct type! Cast it!
+        BoundedStack rhs = (BoundedStack) o;
+        // Check for “count” equality.
+        if(this.count != rhs.count) return false;
+        // Check for “contents” equality. Remember a stack is unordered.
+        for(int i = 0; i < this.count; ++i) {
+            if(!this.contents[i].equals(rhs.contents[i])) return false;
+        }
+        return true;
+    }
+
     /**
      * @param element Element to be pushed onto the stack.
      * @requires
@@ -25,8 +46,7 @@ public class BoundedStack
      */
     public void push(Integer element)
     {
-        contents[count] = element;
-        count++;
+        contents[count++] = element;
     }
 
     /**
@@ -38,12 +58,7 @@ public class BoundedStack
      */
     public Integer pop()
     {
-        Integer popped;
-        count--;
-        popped = contents[count];
-        contents[count] = null;
-
-        return popped;
+        return contents[--count];
     }
 
     /**
@@ -53,7 +68,7 @@ public class BoundedStack
      */
     public int getDepth()
     {
-        return count - 1;
+        return contents[count - 1];
     }
 
     /**

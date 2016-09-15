@@ -15,6 +15,13 @@ public class BoundedSet
         count = 0;
     }
 
+    public BoundedSet(int size, Integer[] initial) {
+        this.contents = new Integer[size];
+        this.count = initial.length;
+        for(int i = 0; i < this.count; ++i)
+            this.contents[i] = initial[i];
+    }
+
     /**
      * @param element Element to be inserted into the set.
      * @requires

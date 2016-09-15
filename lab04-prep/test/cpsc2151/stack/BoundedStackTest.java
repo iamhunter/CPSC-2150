@@ -4,6 +4,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import org.junit.Assert;
+
 /**
  * Created by andrewmarionhunter on 9/14/16.
  */
@@ -16,6 +18,31 @@ public class BoundedStackTest {
         empty = new BoundedStack(6);
         partial = new BoundedStack(6, new Integer[]{1, 2, 3});
         full = new BoundedStack(6, new Integer[]{1, 2, 3, 4, 5, 6});
+    }
+    @Test
+    public void testPush()
+    {
+        //empty
+        empty.push(new Integer(1));
+        Assert.assertEquals(new BoundedStack(6, new Integer[]{1}),empty);
+
+        empty.push(new Integer(2));
+        Assert.assertEquals(new BoundedStack(6, new Integer[]{1, 2}),empty);
+
+        empty.push(new Integer(3));
+        Assert.assertEquals(new BoundedStack(6, new Integer[]{1, 2, 3}),empty);
+
+
+        //partial
+        partial.push(new Integer(4));
+        Assert.assertEquals(new BoundedStack(6, new Integer[]{1, 2, 3, 4}),partial);
+
+        partial.push(new Integer(5));
+        Assert.assertEquals(new BoundedStack(6, new Integer[]{1, 2, 3, 4, 5}),partial);
+
+        partial.push(new Integer(6));
+        Assert.assertEquals(new BoundedStack(6, new Integer[]{1, 2, 3, 4, 5, 6}),partial);
+
     }
 
 }

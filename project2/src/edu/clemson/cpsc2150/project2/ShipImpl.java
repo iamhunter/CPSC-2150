@@ -1,0 +1,39 @@
+package edu.clemson.cpsc2150.project2;
+
+/**
+ * Created by andrewmarionhunter on 9/20/16.
+ */
+public class ShipImpl implements Ship{
+    public void setCoordinates(Coordinate coord, Direction dir)
+    {
+
+    }
+
+    // returns an array of the ship's coordinates
+    public Coordinate[] getCoordinates()
+    {
+        Coordinate array[] = new Coordinate[3];
+
+        return array;
+    }
+
+    // takes a shot at this ship's coordinates and
+    // returns Status.MISS, Status.HIT, or STATUS.SUNK
+    public Status shoot(Coordinate coord)
+    {
+        //If hit
+        return Status.HIT;
+    }
+
+    // returns true if all of the ship's corrdinates are hit
+    // but otherwise, false
+    public boolean isSunk()
+    {
+        //If all ships coordinates are hit
+        return true;
+
+        // Else
+        // return false
+    }
+
+}

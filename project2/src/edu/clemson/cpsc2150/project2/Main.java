@@ -1,4 +1,4 @@
-package edu.clemson.cpsc2150.project1;
+package edu.clemson.cpsc2150.project2;
 
 import java.io.*;
 

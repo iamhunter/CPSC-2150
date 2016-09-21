@@ -15,16 +15,16 @@ public class Main {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         // create the grid
-        Grid grid = new Grid();
-        grid.setGridDimensions(Grid.DEFAULT_GRID_SIZE, Grid.DEFAULT_GRID_SIZE);
+        oldGrid grid = new oldGrid();
+        grid.setGridDimensions(oldGrid.DEFAULT_GRID_SIZE, oldGrid.DEFAULT_GRID_SIZE);
 
         // place the ships
         System.out.println("PLAYER 1 TURN");
-        for (int ship = 0; ship < Grid.DEFAULT_SHIP_COUNT; ++ship) {
+        for (int ship = 0; ship < oldGrid.DEFAULT_SHIP_COUNT; ++ship) {
             boolean shipPlaced = false;
             do {
                 // read in the coordinates
-                System.out.printf("Place your %s: ", Grid.SHIP_NAMES[ship]);
+                System.out.printf("Place your %s: ", oldGrid.SHIP_NAMES[ship]);
                 int[] coords = parseCoordinates(reader.readLine());
 
                 // read in the direction
@@ -32,10 +32,10 @@ public class Main {
                 int dir = parseDirection(reader.readLine());
 
                 // can we place the ship here?
-                if (dir != Grid.UNKNOWN && !grid.isConflictingShipPlacement(coords[0], coords[1], Grid.SHIP_LENGTHS[ship], dir)) {
+                if (dir != oldGrid.UNKNOWN && !grid.isConflictingShipPlacement(coords[0], coords[1], oldGrid.SHIP_LENGTHS[ship], dir)) {
                     // place the ship!
                     grid.setShipToBePlaced(ship);
-                    grid.placeShip(coords[0], coords[1], Grid.SHIP_LENGTHS[ship], dir);
+                    grid.placeShip(coords[0], coords[1], oldGrid.SHIP_LENGTHS[ship], dir);
                     shipPlaced = true;
                 } else {
                     // print error message
@@ -71,15 +71,15 @@ public class Main {
 
             // display the result of the shot
             switch (result) {
-                case Grid.SHOT_MISS:
+                case oldGrid.SHOT_MISS:
                     System.out.println("Miss!");
                     break;
-                case Grid.SHOT_HIT:
+                case oldGrid.SHOT_HIT:
                     System.out.println("Hit!");
                     break;
-                case Grid.SHOT_SUNK:
+                case oldGrid.SHOT_SUNK:
                     int ship = grid.getLastSunkShip();
-                    System.out.printf("Hit!\nSunk the %s!\n", Grid.SHIP_NAMES[ship]);
+                    System.out.printf("Hit!\nSunk the %s!\n", oldGrid.SHIP_NAMES[ship]);
                     break;
             }
         }
@@ -92,23 +92,23 @@ public class Main {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         // setup the grid for each player
-        Grid[] grids = new Grid[2];
+        oldGrid[] grids = new oldGrid[2];
         for (int player = 0; player < 2; ++player) {
             // create the grid
-            grids[player] = new Grid();
-            grids[player].setGridDimensions(Grid.DEFAULT_GRID_SIZE, Grid.DEFAULT_GRID_SIZE);
+            grids[player] = new oldGrid();
+            grids[player].setGridDimensions(oldGrid.DEFAULT_GRID_SIZE, oldGrid.DEFAULT_GRID_SIZE);
 
             // place the ships
             System.out.printf("PLAYER %d TURN\n", player + 1);
 
-            for (int ship = 0; ship < Grid.DEFAULT_SHIP_COUNT; ++ship) {
+            for (int ship = 0; ship < oldGrid.DEFAULT_SHIP_COUNT; ++ship) {
                 boolean shipPlaced = false;
                 do {
                     // display the grid
                     grids[player].displayGrid(true);
 
                     // read in the coordinates
-                    System.out.printf("\nPlace your %s: ", Grid.SHIP_NAMES[ship]);
+                    System.out.printf("\nPlace your %s: ", oldGrid.SHIP_NAMES[ship]);
                     int[] coords = parseCoordinates(reader.readLine());
 
                     // read in the direction
@@ -116,10 +116,10 @@ public class Main {
                     int dir = parseDirection(reader.readLine());
 
                     // can we place the ship here?
-                    if (dir != Grid.UNKNOWN && !grids[player].isConflictingShipPlacement(coords[0], coords[1], Grid.SHIP_LENGTHS[ship], dir)) {
+                    if (dir != oldGrid.UNKNOWN && !grids[player].isConflictingShipPlacement(coords[0], coords[1], oldGrid.SHIP_LENGTHS[ship], dir)) {
                         // place the ship!
                         grids[player].setShipToBePlaced(ship);
-                        grids[player].placeShip(coords[0], coords[1], Grid.SHIP_LENGTHS[ship], dir);
+                        grids[player].placeShip(coords[0], coords[1], oldGrid.SHIP_LENGTHS[ship], dir);
                         shipPlaced = true;
                     } else {
                         // print error message
@@ -156,15 +156,15 @@ public class Main {
 
             // display the result of the shot
             switch (result) {
-                case Grid.SHOT_MISS:
+                case oldGrid.SHOT_MISS:
                     System.out.println("Miss!");
                     break;
-                case Grid.SHOT_HIT:
+                case oldGrid.SHOT_HIT:
                     System.out.println("Hit!");
                     break;
-                case Grid.SHOT_SUNK:
+                case oldGrid.SHOT_SUNK:
                     int ship = grids[opponent].getLastSunkShip();
-                    System.out.printf("Hit!\nSunk the %s!\n", Grid.SHIP_NAMES[ship]);
+                    System.out.printf("Hit!\nSunk the %s!\n", oldGrid.SHIP_NAMES[ship]);
                     break;
             }
 
@@ -199,11 +199,11 @@ public class Main {
 
     public static int parseDirection(String input) {
         if (input.toLowerCase().equals("d")) {
-            return Grid.DOWN;
+            return oldGrid.DOWN;
         } else if (input.toLowerCase().equals("r")) {
-            return Grid.RIGHT;
+            return oldGrid.RIGHT;
         } else {
-            return Grid.UNKNOWN;
+            return oldGrid.UNKNOWN;
         }
     }
 }

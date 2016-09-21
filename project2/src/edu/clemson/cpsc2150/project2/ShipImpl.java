@@ -4,6 +4,12 @@ package edu.clemson.cpsc2150.project2;
  * Created by andrewmarionhunter on 9/20/16.
  */
 public class ShipImpl implements Ship{
+    public ShipImpl(ShipType ship)
+    {
+        //Sets the length
+
+    }
+
     public void setCoordinates(Coordinate coord, Direction dir)
     {
 

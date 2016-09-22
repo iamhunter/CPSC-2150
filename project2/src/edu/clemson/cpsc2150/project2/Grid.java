@@ -2,6 +2,31 @@ package edu.clemson.cpsc2150.project2;
 
 public interface Grid
 {
+    // Default square dimension of the grid
+    int DEFAULT_GRID_SIZE = 10;
+
+    // Default number of ships
+    int DEFAULT_SHIP_COUNT = 5;
+
+    // Constant values for encoding grid status
+    int MISS = 1;
+    int HIT = 2;
+    int SHIP = 3;
+
+    // Constant values for ship names and lengths
+    String[] SHIP_NAMES ={ShipType.CARRIER.name, ShipType.BATTLESHIP.name, ShipType.CRUISER.name, ShipType.SUBMARINE.name, ShipType.DESTROYER.name};
+    int[] SHIP_LENGTHS = {ShipType.CARRIER.length, ShipType.BATTLESHIP.length, ShipType.CRUISER.length, ShipType.SUBMARINE.length, ShipType.DESTROYER.length};
+
+    // Constant values for encoding directions
+    int UNKNOWN = -1;
+    int DOWN = 0;
+    int RIGHT = 1;
+
+    // Constant values for encoding shot result
+    int SHOT_MISS = -1;
+    int SHOT_HIT = 0;
+    int SHOT_SUNK = 1;
+
     void setGridDimensions(int rows, int cols);
 
     void placeShip(Ship ship);

@@ -3,20 +3,19 @@ package cpsc2151.stack;
 import java.util.Arrays;
 
 /**
- * Created by andrewmarionhunter on 9/14/16.
+ * Created by andrewmarionhunter on 9/21/16.
  */
-public class BoundedStack implements IBoundedStack
-{
+public class BoundedStackLeftAlignedReverse {
     Integer[] contents;
     int count;
 
-    public BoundedStack(int maximum)
+    public BoundedStackLeftAlignedReverse(int maximum)
     {
         contents = new Integer[maximum];
         count = 0;
     }
 
-    public BoundedStack(int size, Integer[] initial) {
+    public BoundedStackLeftAlignedReverse(int size, Integer[] initial) {
         this.contents = new Integer[size];
         this.count = initial.length;
         for(int i = 0; i < this.count; ++i)
@@ -46,7 +45,15 @@ public class BoundedStack implements IBoundedStack
      */
     public void push(Integer element)
     {
-        contents[count++] = element;
+        Integer[] temp = new Integer[getDepth()];
+
+        for(int i = 0; i < getDepth()+1; i++)
+        {
+            temp[i+1] = contents[i];
+        }
+        temp[0] = element;
+
+        contents = temp;
     }
 
     /**
@@ -58,7 +65,19 @@ public class BoundedStack implements IBoundedStack
      */
     public Integer pop()
     {
-        return contents[--count];
+        Integer tempint = contents[0];
+
+        count--;
+
+        Integer[] temp = new Integer[getDepth()];
+
+        for(int i = 0; i < getDepth()+1; i++)
+        {
+            temp[i] = contents[i+1];
+        }
+        contents = temp;
+
+        return tempint;
     }
 
     /**
@@ -115,5 +134,4 @@ public class BoundedStack implements IBoundedStack
     {
         return Arrays.toString(contents);
     }
-
 }

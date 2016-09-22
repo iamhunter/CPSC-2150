@@ -1,12 +1,82 @@
-package cpsc2151.set;
-
+package edu.clemson.cpsc2150.project2;
 /**
  * Created by andrewmarionhunter on 9/6/16.
  */
-public class BoundedSet
+public class BoundedSet implements Grid
 {
-    static Integer[] contents;
-    int count;
+    private static Integer[] contents;
+    private int count;
+
+    private int myRowCount, myColCount;
+    private int[][] myStatusGrid;
+    private int[][] myShipGrid;
+    private int[] myShipHitsRemaining;
+    private int myTotalHitsRemaining;
+
+    private int myShipToBePlaced;
+    private int myLastSunkShip;
+
+
+    public BoundedSet()
+    {
+
+    }
+
+
+    public void setGridDimensions(int rows, int cols)
+    {
+        myRowCount = rows;
+        myColCount = cols;
+
+        myStatusGrid = new int[myRowCount][myColCount];
+        myShipGrid = new int[myRowCount][myColCount];
+        myShipHitsRemaining = new int[DEFAULT_SHIP_COUNT];
+        myTotalHitsRemaining = 0;
+    }
+
+    public void placeShip(Ship ship)
+    {
+
+    }
+
+    // see Ship.shoot()
+    public Status shoot(Coordinate coord)
+    {
+        //If hit
+        return Status.HIT;
+    }
+
+    // returns Ship object representing the last ship
+    // which was sunk(null if no ship has been sunk)
+    public Ship getLastSunkShip()
+    {
+        ShipImpl potato = new ShipImpl(ShipType.CARRIER);
+        Coordinate x = new Coordinate();
+        x.row = 3;
+        x.col = 4;
+
+        return potato;
+    }
+
+    public boolean hasBeenAttempted(Coordinate coord)
+    {
+        //If has been attempted
+        return true;
+    }
+
+    public void displayGrid(boolean showShips)
+    {
+
+    }
+
+    // returns true if all ships have been sunk
+    // otherwise, false
+    public boolean isGameOver()
+    {
+        return true;
+    }
+
+
 
 
     public BoundedSet(int size)

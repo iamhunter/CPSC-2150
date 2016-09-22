@@ -8,7 +8,8 @@ public class Main {
         /****** UNCOMMENT THE METHOD FOR THE VERSION THAT YOU WANT TO RUN ******/
 
         //run85PctVersion();
-        run100PctVersion();
+        //run100PctVersion();
+        runproject2version();
     }
 
     public static void run85PctVersion() throws IOException {
@@ -182,6 +183,58 @@ public class Main {
         }
 
         System.out.printf("\nGame over! Player %d wins!\n", winner);
+    }
+
+    public static void runproject2version() throws IOException
+    {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+        Grid[] grids = new Grid[2];
+
+        // create the grids
+        grids[0] = new ArrayGrid();
+        grids[1] = new BoundedSet();
+
+        // set the dimensions of the grids
+        grids[0].setGridDimensions(Grid.DEFAULT_GRID_SIZE, Grid.DEFAULT_GRID_SIZE);
+        grids[1].setGridDimensions(Grid.DEFAULT_GRID_SIZE, Grid.DEFAULT_GRID_SIZE);
+
+        System.out.printf("PLAYER 1 TURN\n");
+
+        for (int ship = 0; ship < Grid.DEFAULT_SHIP_COUNT; ++ship) {
+        boolean shipPlaced = false;
+        do {
+            // display the grid
+            grids[0].displayGrid(true);
+
+            // read in the coordinates
+            System.out.printf("\nPlace your %s: ", Grid.SHIP_NAMES[ship]);
+            int[] coords = parseCoordinates(reader.readLine());
+
+            // read in the direction
+            System.out.print("Choose direction (d/r): ");
+            int dir = parseDirection(reader.readLine());
+
+            // can we place the ship here?
+            if (dir != oldGrid.UNKNOWN && !grids[0].isConflictingShipPlacement(coords[0], coords[1], oldGrid.SHIP_LENGTHS[ship], dir)) {
+                // place the ship!
+                grids[0].setShipToBePlaced(ship);
+                grids[0].placeShip(coords[0], coords[1], oldGrid.SHIP_LENGTHS[ship], dir);
+                shipPlaced = true;
+            } else {
+                // print error message
+                System.out.println("Unable to place ship at that location! Please try again.");
+            }
+        } while (!shipPlaced);
+        }
+
+
+
+
+
+
+
+
     }
 
     public static int[] parseCoordinates(String input) {

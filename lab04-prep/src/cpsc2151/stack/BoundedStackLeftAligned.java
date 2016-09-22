@@ -5,18 +5,18 @@ import java.util.Arrays;
 /**
  * Created by andrewmarionhunter on 9/14/16.
  */
-public class BoundedStack implements IBoundedStack
+public class BoundedStackLeftAligned implements IBoundedStack
 {
     Integer[] contents;
     int count;
 
-    public BoundedStack(int maximum)
+    public BoundedStackLeftAligned(int maximum)
     {
         contents = new Integer[maximum];
         count = 0;
     }
 
-    public BoundedStack(int size, Integer[] initial) {
+    public BoundedStackLeftAligned(int size, Integer[] initial) {
         this.contents = new Integer[size];
         this.count = initial.length;
         for(int i = 0; i < this.count; ++i)

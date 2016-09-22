@@ -7,7 +7,6 @@ public class ShipImpl implements Ship{
     public ShipImpl(ShipType ship)
     {
         //Sets the length
-
     }
 
     public void setCoordinates(Coordinate coord, Direction dir)
@@ -22,6 +21,13 @@ public class ShipImpl implements Ship{
 
         return array;
     }
+
+    // returns the type of the ship
+    public ShipType getType()
+    {
+        return ShipType.CARRIER;
+    }
+
 
     // takes a shot at this ship's coordinates and
     // returns Status.MISS, Status.HIT, or STATUS.SUNK

@@ -1,9 +1,11 @@
 package cpsc2151.set;
 
+import cpsc2151.stack.IBoundedStack;
+
 /**
  * Created by andrewmarionhunter on 9/6/16.
  */
-public class BoundedSet
+public class BoundedSet implements IBoundedStack
 {
     static Integer[] contents;
     int count;
@@ -31,7 +33,7 @@ public class BoundedSet
      * [element is unchanged.] and [element is inserted into the set.]
      * </pre>
      */
-    public static void insert(Integer element)
+    public void insert(Integer element)
     {
         for(int x = 0; x < contents.length; x++)
         {
@@ -56,7 +58,7 @@ public class BoundedSet
      * the return is false.]
      * </pre>
      */
-    public static boolean contains(Integer element)
+    public boolean contains(Integer element)
     {
         for(int x = 0; x < contents.length; x++)
         {
@@ -76,7 +78,7 @@ public class BoundedSet
      * [element is unchanged.] and [element is removed from the set.]
      * </pre>
      */
-    public static void remove(Integer element)
+    public void remove(Integer element)
     {
         for(int x = 0; x < contents.length; x++)
         {
@@ -96,7 +98,7 @@ public class BoundedSet
      * [The return equals the number of elements in the set.]
      * </pre>
      */
-    public static int sizeOfSet()
+    public int sizeOfSet()
     {
         int counter = 0;
         for(int x = 0; x < contents.length; x++)
@@ -119,7 +121,7 @@ public class BoundedSet
      * is returned to the caller.]
      * </pre>
      */
-    public static Integer removeAny()
+    public Integer removeAny()
     {
         Integer tempInt = contents[0];
         contents[0] = null;
@@ -134,7 +136,7 @@ public class BoundedSet
      * [The contents of the set are returned as a string.]
      * </pre>
      */
-    public static String toString1() {
+    public String toString1() {
         String tempString = " ";
 
         for(int x = 0; x < contents.length; x++)

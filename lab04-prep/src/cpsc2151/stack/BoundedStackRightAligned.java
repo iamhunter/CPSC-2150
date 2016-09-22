@@ -3,20 +3,27 @@ package cpsc2151.stack;
 import java.util.Arrays;
 
 /**
- * Created by andrewmarionhunter on 9/14/16.
+ * Created by andrewmarionhunter on 9/21/16.
  */
-public class BoundedStack implements IBoundedStack
-{
+
+
+/**
+  * @invariant The contents of stack are within
+  * [contents.length – 1 – count, contents.length – 1], ordered from
+  * the top of the stack to the bottom.
+  */
+
+public class BoundedStackRightAligned {
     Integer[] contents;
     int count;
 
-    public BoundedStack(int maximum)
+    public BoundedStackRightAligned(int maximum)
     {
         contents = new Integer[maximum];
         count = 0;
     }
 
-    public BoundedStack(int size, Integer[] initial) {
+    public BoundedStackRightAligned(int size, Integer[] initial) {
         this.contents = new Integer[size];
         this.count = initial.length;
         for(int i = 0; i < this.count; ++i)
@@ -46,7 +53,8 @@ public class BoundedStack implements IBoundedStack
      */
     public void push(Integer element)
     {
-        contents[count++] = element;
+        contents[contents.length - 1 - count] = element;
+        count++;
     }
 
     /**
@@ -58,7 +66,9 @@ public class BoundedStack implements IBoundedStack
      */
     public Integer pop()
     {
-        return contents[--count];
+        count--;
+
+        return contents[contents.length - count];
     }
 
     /**
@@ -115,5 +125,4 @@ public class BoundedStack implements IBoundedStack
     {
         return Arrays.toString(contents);
     }
-
 }

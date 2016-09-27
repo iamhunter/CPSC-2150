@@ -4,9 +4,16 @@ package edu.clemson.cpsc2150.project2;
  * Created by andrewmarionhunter on 9/20/16.
  */
 public class ShipImpl implements Ship{
-    public ShipImpl(ShipType ship)
+
+
+    private int length;
+    private String name;
+
+    ShipImpl(ShipType ship)
     {
         //Sets the length
+        length = ship.length;
+        name = ship.name;
     }
 
     public void setCoordinates(Coordinate coord, Direction dir)
@@ -46,6 +53,11 @@ public class ShipImpl implements Ship{
 
         // Else
         // return false
+    }
+
+    public int getLength()
+    {
+        return length;
     }
 
 }

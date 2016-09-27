@@ -22,11 +22,6 @@ public interface Grid
     int DOWN = 0;
     int RIGHT = 1;
 
-    // Constant values for encoding shot result
-    int SHOT_MISS = -1;
-    int SHOT_HIT = 0;
-    int SHOT_SUNK = 1;
-
     void setGridDimensions(int rows, int cols);
 
     void placeShip(Ship ship);
@@ -45,5 +40,7 @@ public interface Grid
     // returns true if all ships have been sunk
     // otherwise, false
     boolean isGameOver();
+
+    boolean isConflictingShipPlacement (int row, int col, int len, int dir);
 
 }

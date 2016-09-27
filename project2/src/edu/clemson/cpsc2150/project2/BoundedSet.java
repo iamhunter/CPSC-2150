@@ -22,6 +22,31 @@ public class BoundedSet implements Grid
 
     }
 
+    public boolean isConflictingShipPlacement (int row, int col, int len, int dir) {
+        // loop through each coordinate of the ship to be placed
+        for (int i = 0; i < len; ++i) {
+
+            // does the ship go off the grid?
+            if (row < 0 || col < 0 || row >= myRowCount || col >= myColCount) {
+                return true;
+            }
+
+            // does the ship overlap with another ship?
+            if (myStatusGrid[row][col] == SHIP) {
+                return true;
+            }
+
+            // increment the ship coordinates
+            if (dir == DOWN) {
+                ++row;
+            } else {
+                ++col;
+            }
+        }
+        return false;
+    }
+
+
 
     public void setGridDimensions(int rows, int cols)
     {

@@ -5,6 +5,7 @@ package edu.clemson.cpsc2150.project2;
  */
 
 public interface Ship {
+
     // sets the placement of this ship starting at
     // coordinate "coordZ" and proceeding in direction "dir"
     void setCoordinates(Coordinate coord, Direction dir);
@@ -14,6 +15,9 @@ public interface Ship {
 
     // returns the type of the ship
     ShipType getType();
+
+    // returns the length of the ship
+    int getLength();
 
     // takes a shot at this ship's coordinates and
     // returns Status.MISS, Status.HIT, or STATUS.SUNK

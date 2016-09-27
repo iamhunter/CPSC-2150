@@ -218,8 +218,8 @@ public class Main {
             // can we place the ship here?
             if (dir != oldGrid.UNKNOWN && !grids[0].isConflictingShipPlacement(coords[0], coords[1], oldGrid.SHIP_LENGTHS[ship], dir)) {
                 // place the ship!
-                grids[0].setShipToBePlaced(ship);
-                grids[0].placeShip(coords[0], coords[1], oldGrid.SHIP_LENGTHS[ship], dir);
+                //grids[0].setShipToBePlaced(ship);
+                //grids[0].placeShip(coords[0], coords[1], oldGrid.SHIP_LENGTHS[ship], dir);
                 shipPlaced = true;
             } else {
                 // print error message

@@ -3,10 +3,10 @@ package edu.clemson.cpsc2150.project2;
 /**
  * Created by andrewmarionhunter on 9/21/16.
  */
-public class ArrayGrid implements Grid {
+class ArrayGrid implements Grid {
 
     private int myRowCount, myColCount;
-    private int[][] myStatusGrid;
+    private Status[][] myStatusGrid;
     private int[][] myShipGrid;
     private int[] myShipHitsRemaining;
     private int myTotalHitsRemaining;
@@ -20,22 +20,84 @@ public class ArrayGrid implements Grid {
         myRowCount = rows;
         myColCount = cols;
 
-        myStatusGrid = new int[myRowCount][myColCount];
+        myStatusGrid = new Status[myRowCount][myColCount];
         myShipGrid = new int[myRowCount][myColCount];
         myShipHitsRemaining = new int[DEFAULT_SHIP_COUNT];
         myTotalHitsRemaining = 0;
     }
 
+    public boolean isConflictingShipPlacement (int row, int col, int len, int dir) {
+        // loop through each coordinate of the ship to be placed
+        for (int i = 0; i < len; ++i) {
+
+            // does the ship go off the grid?
+            if (row < 0 || col < 0 || row >= myRowCount || col >= myColCount) {
+                return true;
+            }
+
+            // does the ship overlap with another ship?
+            if (myStatusGrid[row][col] == Status.SHIP) {
+                return true;
+            }
+
+            // increment the ship coordinates
+            if (dir == DOWN) {
+                ++row;
+            } else {
+                ++col;
+            }
+        }
+        return false;
+    }
+
     public void placeShip(Ship ship)
     {
+        // set the remaining number of hits for this ship
+        myShipHitsRemaining[myShipToBePlaced] = ship.getLength();
+        myTotalHitsRemaining += ship.getLength();
 
+        // loop through each coordinate of the ship to be placed
+        for (int i = 0; i < ship.getLength(); ++i) {
+            // set the status and ship at current coordinates
+            myStatusGrid[row][col] = SHIP;
+            myShipGrid[row][col] = myShipToBePlaced;
+
+            // increment the ship coordinates
+            if (dir == DOWN) {
+                ++row;
+            } else {
+                ++col;
+            }
+        }
     }
 
     // see Ship.shoot()
     public Status shoot(Coordinate coord)
     {
-        //If hit
-        return Status.HIT;
+        // is it a hit?
+        if (myStatusGrid[coord.row][coord.col] == Status.SHIP) {
+            // change status to hit
+            myStatusGrid[coord.row][coord.col] = Status.HIT;
+
+            // decrement the remaining number of hits
+            int ship = myShipGrid[coord.row][coord.col];
+            --myShipHitsRemaining[ship];
+            --myTotalHitsRemaining;
+
+            // is the ship sunk?
+            if (myShipHitsRemaining[ship] == 0) {
+                // the ship is sunk!
+                myLastSunkShip = ship;
+                return Status.SUNK;
+            } else {
+                // the ship is hit, but not sunk
+                return Status.HIT;
+            }
+        } else {
+            // change status to miss
+            myStatusGrid[coord.row][coord.col] = Status.MISS;
+            return Status.MISS;
+        }
     }
 
     // returns Ship object representing the last ship

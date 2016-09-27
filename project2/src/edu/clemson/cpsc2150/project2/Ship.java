@@ -19,6 +19,9 @@ public interface Ship {
     // returns the length of the ship
     int getLength();
 
+    // returns the direction of the ship
+    Direction getDirection();
+
     // takes a shot at this ship's coordinates and
     // returns Status.MISS, Status.HIT, or STATUS.SUNK
     Status shoot(Coordinate coord);

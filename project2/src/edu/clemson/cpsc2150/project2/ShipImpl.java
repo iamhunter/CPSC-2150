@@ -8,6 +8,7 @@ public class ShipImpl implements Ship{
 
     private int length;
     private String name;
+    private Direction direction;
 
     ShipImpl(ShipType ship)
     {
@@ -19,6 +20,7 @@ public class ShipImpl implements Ship{
     public void setCoordinates(Coordinate coord, Direction dir)
     {
 
+        direction = dir;
     }
 
     // returns an array of the ship's coordinates
@@ -60,4 +62,8 @@ public class ShipImpl implements Ship{
         return length;
     }
 
+    public Direction getDirection()
+    {
+        return direction;
+    }
 }

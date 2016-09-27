@@ -59,14 +59,14 @@ class ArrayGrid implements Grid {
         // loop through each coordinate of the ship to be placed
         for (int i = 0; i < ship.getLength(); ++i) {
             // set the status and ship at current coordinates
-            myStatusGrid[row][col] = SHIP;
-            myShipGrid[row][col] = myShipToBePlaced;
+            myStatusGrid[ship.getCoordinates()[0].row][ship.getCoordinates()[0].col] = Status.SHIP;
+            myShipGrid[ship.getCoordinates()[0].row][ship.getCoordinates()[0].col] = myShipToBePlaced;
 
             // increment the ship coordinates
-            if (dir == DOWN) {
-                ++row;
+            if (ship.getDirection() == Direction.DOWN) {
+                ++ship.getCoordinates()[0].row;
             } else {
-                ++col;
+                ++ship.getCoordinates()[0].col;
             }
         }
     }

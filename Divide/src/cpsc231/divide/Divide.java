@@ -8,19 +8,19 @@ import java.util.Scanner;
 public class Divide {
     public static void main(String[]args)
     {
-        int decimalDividend;
-        int decimalDivisor;
+        int decimalDividend = 875;
+        int decimalDivisor = 11;
 
         String binaryDividend;
         String binaryDivisor;
 
         Scanner in = new Scanner(System.in);
         System.out.print("enter dividend: ");
-        decimalDividend = in.nextInt();
+        //decimalDividend = in.nextInt();
 
 
         System.out.print("enter divisor:");
-        decimalDivisor = in.nextInt();
+        //decimalDivisor = in.nextInt();
         System.out.println();
 
         binaryDividend = String.format("%16s", Integer.toBinaryString(decimalDividend)).replace(' ', '0');
@@ -46,24 +46,29 @@ public class Divide {
         }
 
         System.out.println();
-        System.out.print("       <<              shift left");
+        System.out.println("       <<              shift left");
 
-        int integerString = Integer.parseInt(binaryDividend);
-
-    }
-
-    private static void printBinary(int toBinary)
-    {
-        int remainder;
-
-        if(toBinary <=1)
+        int integerString = Integer.parseInt(binaryDividend, 2);
+        integerString = integerString << 1;
+        binaryDividend = String.format("%16s", Integer.toBinaryString(integerString)).replace(' ', '0');
+        tempDividendToPrint = binaryDividend.split("");
+        System.out.print("          0 ");
+        for(int x = 0; x < 8; x++)
         {
-            System.out.print(toBinary);
-            return;
+            System.out.print(tempDividendToPrint[x]);
         }
+        System.out.print(" ");
+        for(int x = 8; x < 15; x++)
+        {
+            System.out.print(tempDividendToPrint[x]);
+        }
+        System.out.println(".");
 
-        remainder = toBinary %2;
-        printBinary(toBinary >> 1);
-        System.out.print(remainder);
+        //TODO: Don't hardcode the add function
+        System.out.println("        - 0 " + binaryDivisor + "         (add 1 11110101)");
+        System.out.println("          ----------");
+
+
+
     }
 }

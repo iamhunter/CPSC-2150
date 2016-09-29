@@ -50,6 +50,7 @@ public class Divide {
             int integerDividend = Integer.parseInt(binaryDividend, 2);
             integerDividend = integerDividend << 1;
             binaryDividend = String.format("%16s", Integer.toBinaryString(integerDividend)).replace(' ', '0');
+            System.out.println(binaryDividend);
 
             tempDividendToPrint = binaryDividend.split("");
 

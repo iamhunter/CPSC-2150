@@ -49,7 +49,6 @@ public class Divide {
         System.out.print("       <<              shift left");
 
         int integerString = Integer.parseInt(binaryDividend);
-        integerString<<1;
 
     }
 

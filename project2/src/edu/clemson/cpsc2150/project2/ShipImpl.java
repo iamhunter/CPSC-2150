@@ -9,32 +9,52 @@ public class ShipImpl implements Ship{
     private int length;
     private String name;
     private Direction direction;
+    private Coordinate[] coordArray;
+    private ShipType type;
 
     ShipImpl(ShipType ship)
     {
         //Sets the length
         length = ship.length;
         name = ship.name;
+        type = ship;
     }
 
     public void setCoordinates(Coordinate coord, Direction dir)
     {
-
         direction = dir;
+        coordArray = new Coordinate[length];
+        for (int i = 0; i < length; i++)
+        {
+            if (direction == Direction.DOWN)
+            {
+                coordArray[i] = coord;
+                //coordArray[i].row = coord.row;
+            }
+            else if (direction == Direction.RIGHT)
+            {
+                coordArray[i] = coord;
+                //coordArray[i].row = coord.row + i;
+            }
+        }
+
     }
 
     // returns an array of the ship's coordinates
     public Coordinate[] getCoordinates()
     {
-        Coordinate array[] = new Coordinate[3];
+        return coordArray;
+    }
 
-        return array;
+    public String getName()
+    {
+        return name;
     }
 
     // returns the type of the ship
     public ShipType getType()
     {
-        return ShipType.CARRIER;
+        return type;
     }
 
 

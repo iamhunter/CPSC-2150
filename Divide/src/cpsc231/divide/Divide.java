@@ -78,6 +78,7 @@ public class Divide {
             int accumulator = Integer.parseInt(strBuilder.toString(), 2);
 
             int accumulatorResult = accumulator - integerDivisor;
+            System.out.print("POTATO" + accumulatorResult + "POTATO");
             String result = Integer.toBinaryString(accumulatorResult);
             result = result.substring(result.length() - 8);
 
@@ -108,10 +109,6 @@ public class Divide {
             System.out.println("\n---------------------------------------------------");
 
         }
-
-
-
-
 
 
     }

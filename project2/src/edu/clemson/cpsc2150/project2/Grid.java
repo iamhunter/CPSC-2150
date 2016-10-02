@@ -16,6 +16,8 @@ public interface Grid
     // Constant values for ship names and lengths
     String[] SHIP_NAMES ={ShipType.CARRIER.name, ShipType.BATTLESHIP.name, ShipType.CRUISER.name, ShipType.SUBMARINE.name, ShipType.DESTROYER.name};
     int[] SHIP_LENGTHS = {ShipType.CARRIER.length, ShipType.BATTLESHIP.length, ShipType.CRUISER.length, ShipType.SUBMARINE.length, ShipType.DESTROYER.length};
+    ShipType[] SHIP_STUFF ={ShipType.CARRIER, ShipType.BATTLESHIP, ShipType.CRUISER, ShipType.SUBMARINE, ShipType.DESTROYER};
+
 
     // Constant values for encoding directions
     int UNKNOWN = -1;
@@ -24,7 +26,11 @@ public interface Grid
 
     void setGridDimensions(int rows, int cols);
 
+
     void placeShip(Ship ship);
+
+    boolean isConflictingShipPlacement (Ship ship);
+
 
     // see Ship.shoot()
     Status shoot(Coordinate coord);
@@ -41,6 +47,5 @@ public interface Grid
     // otherwise, false
     boolean isGameOver();
 
-    boolean isConflictingShipPlacement (int row, int col, int len, int dir);
 
 }

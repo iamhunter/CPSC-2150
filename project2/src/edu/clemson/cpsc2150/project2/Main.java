@@ -209,17 +209,38 @@ public class Main {
 
             // read in the coordinates
             System.out.printf("\nPlace your %s: ", Grid.SHIP_NAMES[ship]);
-            int[] coords = parseCoordinates(reader.readLine());
+            int[] coord = parseCoordinates(reader.readLine());
+            Coordinate coords = new Coordinate();
+            coords.row = coord[0];
+            coords.col = coord[1];
+
 
             // read in the direction
             System.out.print("Choose direction (d/r): ");
-            int dir = parseDirection(reader.readLine());
+            int direct = parseDirection(reader.readLine());
+            Direction dir;
+            if (direct == 0)
+            {
+                dir = Direction.DOWN;
+            }
+            else if (direct == 1)
+            {
+                dir = Direction.RIGHT;
+            }
+            else
+            {
+                dir = Direction.UNKNOWN;
+            }
+
+
+            ShipImpl tempShip = new ShipImpl(Grid.SHIP_STUFF[ship]);
+            tempShip.setCoordinates(coords , dir);
 
             // can we place the ship here?
-            if (dir != oldGrid.UNKNOWN && !grids[0].isConflictingShipPlacement(coords[0], coords[1], oldGrid.SHIP_LENGTHS[ship], dir)) {
+            if (dir != Direction.UNKNOWN && !grids[0].isConflictingShipPlacement(tempShip)) {
                 // place the ship!
-                //grids[0].setShipToBePlaced(ship);
-                //grids[0].placeShip(coords[0], coords[1], oldGrid.SHIP_LENGTHS[ship], dir);
+
+                grids[0].placeShip(tempShip);
                 shipPlaced = true;
             } else {
                 // print error message
@@ -228,7 +249,52 @@ public class Main {
         } while (!shipPlaced);
         }
 
+// take shots at the grid
+        System.out.println("\nPLAYER 2 TURN");
+        int numShots = 0;
 
+        // loop until the game is over
+        while (!grids[0].isGameOver()) {
+            // get the coordinates for the next shot
+            boolean isValidShot = false;
+            int[] coord;
+            Coordinate coords = new Coordinate();
+
+            do {
+                System.out.print("Take a shot: ");
+                coord = parseCoordinates(reader.readLine());
+                coords.row = coord[0];
+                coords.col = coord[1];
+
+                // has a shot at this location already been attempted?
+                if (grids[0].hasBeenAttempted(coords)) {
+                    System.out.println("You have already shot at that location! Please try again.");
+                } else {
+                    isValidShot = true;
+                }
+            } while (!isValidShot);
+
+            // take the shot
+            Status result = grids[0].shoot(coords);
+            ++numShots;
+
+            // display the result of the shot
+            switch (result) {
+                case MISS:
+                    System.out.println("Miss!");
+                    break;
+                case HIT:
+                    System.out.println("Hit!");
+                    break;
+                case SUNK:
+                    Ship ship = grids[0].getLastSunkShip();
+                    System.out.printf("Hit!\nSunk the %s!\n", ship.getName());
+                    break;
+            }
+        }
+
+        // game over!
+        System.out.printf("\nGame over! You won in %d shots!\n", numShots);
 
 
 

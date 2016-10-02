@@ -26,25 +26,19 @@ class ArrayGrid implements Grid {
         myTotalHitsRemaining = 0;
     }
 
-    public boolean isConflictingShipPlacement (int row, int col, int len, int dir) {
+    public boolean isConflictingShipPlacement (Ship ship) {
         // loop through each coordinate of the ship to be placed
-        for (int i = 0; i < len; ++i) {
+        for (int i = 0; i < ship.getLength(); ++i) {
+
 
             // does the ship go off the grid?
-            if (row < 0 || col < 0 || row >= myRowCount || col >= myColCount) {
+            if (ship.getCoordinates()[i].row < 0 || ship.getCoordinates()[i].col < 0 || ship.getCoordinates()[i].row >= myRowCount || ship.getCoordinates()[i].col >= myColCount) {
                 return true;
             }
 
             // does the ship overlap with another ship?
-            if (myStatusGrid[row][col] == Status.SHIP) {
+            if (myStatusGrid[ship.getCoordinates()[i].row][ship.getCoordinates()[i].col] == Status.SHIP) {
                 return true;
-            }
-
-            // increment the ship coordinates
-            if (dir == DOWN) {
-                ++row;
-            } else {
-                ++col;
             }
         }
         return false;
@@ -114,8 +108,8 @@ class ArrayGrid implements Grid {
 
     public boolean hasBeenAttempted(Coordinate coord)
     {
-        //If has been attempted
-        return true;
+        return (myStatusGrid[coord.row][coord.col] == Status.MISS || myStatusGrid[coord.row][coord.col] == Status.HIT);
+
     }
 
     public void displayGrid(boolean showShips)
@@ -139,7 +133,33 @@ class ArrayGrid implements Grid {
     }
 
     private String getGridChar(int row, int col, boolean showShips) {
-        switch(myStatusGrid[row][col]) {
+       if   (myStatusGrid[row][col] == Status.MISS)
+        {
+            return "+";
+        }
+       else if(myStatusGrid[row][col] == Status.HIT)
+       {
+           return "X";
+       }
+       else if (myStatusGrid[row][col] == Status.SHIP)
+       {
+           if (showShips) {
+               return "@";
+           } else {
+               return "-";
+           }
+       }
+       else
+       {
+           return "-";
+       }
+
+
+
+
+
+
+        /*switch(myStatusGrid[row][col]) {
             case MISS:
                 return "+";
             case HIT:
@@ -152,13 +172,13 @@ class ArrayGrid implements Grid {
                 }
             default:
                 return "-";
-        }
+        }*/
     }
 
     // returns true if all ships have been sunk
     // otherwise, false
     public boolean isGameOver()
     {
-        return true;
+        return (myTotalHitsRemaining == 0);
     }
 }

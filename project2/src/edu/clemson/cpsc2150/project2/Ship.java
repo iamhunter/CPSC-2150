@@ -29,4 +29,6 @@ public interface Ship {
     // returns true if all of the ship's corrdinates are hit
     // but otherwise, false
     boolean isSunk();
+
+    String getName();
 }

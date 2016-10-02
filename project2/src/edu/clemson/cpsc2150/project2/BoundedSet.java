@@ -22,6 +22,17 @@ public class BoundedSet implements Grid
 
     }
 
+    public void placeShip(Ship ship)
+    {
+
+    }
+
+
+    public boolean isConflictingShipPlacement (Ship ship)
+    {
+        return true;
+    }
+
     public boolean isConflictingShipPlacement (int row, int col, int len, int dir) {
         // loop through each coordinate of the ship to be placed
         for (int i = 0; i < len; ++i) {
@@ -59,10 +70,6 @@ public class BoundedSet implements Grid
         myTotalHitsRemaining = 0;
     }
 
-    public void placeShip(Ship ship)
-    {
-
-    }
 
     // see Ship.shoot()
     public Status shoot(Coordinate coord)
